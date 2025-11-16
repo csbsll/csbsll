@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #1a1a2e;
+            color: white;
+        }
+        .test {
+            background: #ff6b9d;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>测试页面</h1>
+    <div class="test">
+        <h2>CSS 测试 - 如果你看到粉色背景，CSS正常工作</h2>
+    </div>
+    
+    <div id="js-test">
+        <h2>JavaScript 测试</h2>
+        <p>如果看到下面的文字，JavaScript正常工作</p>
+    </div>
+    
+    <script>
+        document.getElementById('js-test').innerHTML += '<p style="color: #48bb78;">✓ JavaScript 正常工作！</p>';
+        console.log('JavaScript 正常加载');
+    </script>
+</body>
+</html>

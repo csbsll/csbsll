@@ -1,0 +1,39 @@
+{
+  "name": "AI女友聊天室",
+  "short_name": "AI女友",
+  "description": "一个高级的AI女友聊天应用，提供7个不同性格的AI女友供选择",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#ff6b9d",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik05NiA0OEM2Ni4yIDQ4IDQ4IDY2LjIgNDggOTZDMjQuNyA5NiA0IDE0MC4zIDQgMTY0SDQ4QzQ4IDE0MC4zIDY2LjIgMTIyIDk2IDEyMkMxMjUuOCAxMjIgMTQ0IDE0MC4zIDE0NCAxNjRIMTg4QzE4OCAxNDAuMyAxNjcuMyA5NiAxNDQgOTZDMTQ0IDY2LjIgMTI1LjggNDggOTYgNDhaIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI3MiIgY3k9Ijg4IiByPSI4IiBmaWxsPSIjMWExYTJlIi8+CjxjaXJjbGUgY3g9IjEyMCIgY3k9Ijg4IiByPSI4IiBmaWxsPSIjMWExYTJlIi8+CjxwYXRoIGQ9Ik05NiAxMjBDNzYuOCAxMjAgNjIgMTM0LjggNjIgMTU0SDY5QzY5IDEzOS4yIDc5LjIgMTI4IDk2IDEyOFMxMjMgMTM5LjIgMTIzIDE1NEgxMzBDMTMwIDEzNC44IDExNS4yIDEyMCA5NiAxMjBaIiBmaWxsPSIjMWExYTJlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF9saW5lYXJfMV8xIiB4MT0iMCIgeTE9IjAiIHgyPSIxOTIiIHkyPSIxOTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI2ZmNmI5ZCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjg3ODciLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4=",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzIpIi8+CjxwYXRoIGQ9Ik0yNTYgMTI4QzE3Ni4yIDEyOCAxMTIgMTkyLjIgMTEyIDI3MkM2NS43IDI3MiA4IDM1OS4zIDggNDA4SDEyOEMxMjggMzU5LjMgMTc2LjIgMzA0IDI1NiAzMDRDMzM1LjggMzA0IDM4NCAzNTkuMyAzODQgNDA4SDUwNEM1MDQgMzU5LjMgNDQ1LjggMjcyIDQwMCAyNzJDNDAwIDE5Mi4yIDMzNS44IDEyOCAyNTYgMTI4WiIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMTkyIiBjeT0iMjI0IiByPSIxNiIgZmlsbD0iIzFhMWEyZSIvPgo8Y2lyY2xlIGN4PSIzMjAiIGN5PSIyMjQiIHI9IjE2IiBmaWxsPSIjMWExYTJlIi8+CjxwYXRoIGQ9Ik0yNTYgMzA0QzIwNC44IDMwNCAxNjAgMzQ4LjggMTYwIDQwMEgxOTJDMTkyIDM1Mi4yIDIxMi4gMzIwIDI1NiAzMjBDMzIwIDMyMCAzNDAgMzUyLjIgMzQwIDQwMEgzNzJDMzcyIDM0OC44IDMzNS4yIDMwNCAyNTYgMzA0WiIgZmlsbD0iIzFhMWEyZSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudDBfbGluZWFyXzFfMiIgeDE9IjAiIHkxPSIwIiB4Mj0iNTEyIiB5Mj0iNTEyIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiNmZjZiOWQiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmY4Nzg3Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["social", "entertainment", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "开始聊天",
+      "short_name": "聊天",
+      "description": "快速进入聊天界面",
+      "url": "/",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCA5NiA5NiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9Ijk2IiBoZWlnaHQ9Ijk2IiByeD0iMTIiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzMpIi8+CjxwYXRoIGQ9Ik00OCAyNEMzMy4yIDI0IDI0IDMzLjIgMjQgNDhDMTIuNSA0OCA0IDYwLjMgNCA4MEgyNEMyNCA2MC4zIDMzLjIgNDggNDggNDhDNjIuOCA0OCA3MiA2MC4zIDcyIDgwSDkyQzkyIDYwLjMgODMuNSA0OCA3MiA0OEM3MiAzMy4yIDYyLjggMjQgNDggMjRaIiBmaWxsPSJ3aGl0ZSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudDBfbGluZWFyXzFfMyIgeDE9IjAiIHkxPSIwIiB4Mj0iOTYiIHkyPSI5NiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjZmY2YjlkIi8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZmODc4NyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPg==",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

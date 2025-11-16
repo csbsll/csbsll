@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI女友聊天室</title>
+    <meta name="description" content="一个高级的AI女友聊天应用，提供7个不同性格的AI女友供选择，每个都有独特的个性和交互体验。">
+    <meta name="keywords" content="AI女友,聊天室,人工智能,对话,聊天机器人">
+    <meta name="author" content="AI女友聊天室">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:title" content="AI女友聊天室">
+    <meta property="og:description" content="一个高级的AI女友聊天应用，提供7个不同性格的AI女友供选择">
+    <meta property="og:image" content="">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="AI女友聊天室">
+    <meta property="twitter:description" content="一个高级的AI女友聊天应用，提供7个不同性格的AI女友供选择">
+    <meta property="twitter:image" content="">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ff6b9d">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzEpIi8+CjxwYXRoIGQ9Ik05NiA0OEM2Ni4yIDQ4IDQ4IDY2LjIgNDggOTZDMjQuNyA5NiA0IDE0MC4zIDQgMTY0SDQ4QzQ4IDE0MC4zIDY2LjIgMTIyIDk2IDEyMkMxMjUuOCAxMjIgMTQ0IDE0MC4zIDE0NCAxNjRIMTg4QzE4OCAxNDAuMyAxNjcuMyA5NiAxNDQgOTZDMTQ0IDY2LjIgMTI1LjggNDggOTYgNDhaIiBmaWxsPSJ3aGl0ZSIvPgo8Y2lyY2xlIGN4PSI3MiIgY3k9Ijg4IiByPSI4IiBmaWxsPSIjMWExYTJlIi8+CjxjaXJjbGUgY3g9IjEyMCIgY3k9Ijg4IiByPSI4IiBmaWxsPSIjMWExYTJlIi8+CjxwYXRoIGQ9Ik05NiAxMjBDNzYuOCAxMjAgNjIgMTM0LjggNjIgMTU0SDY5QzY5IDEzOS4yIDc5LjIgMTI4IDk2IDEyOFMxMjMgMTM5LjIgMTIzIDE1NEgxMzBDMTMwIDEzNC44IDExNS4yIDEyMCA5NiAxMjBaIiBmaWxsPSIjMWExYTJlIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF9saW5lYXJfMV8xIiB4MT0iMCIgeTE9IjAiIHgyPSIxOTIiIHkyPSIxOTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI2ZmNmI5ZCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjg3ODciLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4=">
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- 侧边栏 - AI女友选择 -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-heart"></i> AI女友</h2>
+                <p>选择你的专属AI伴侣</p>
+            </div>
+            
+            <div class="ai-girlfriends-list">
+                <div class="girlfriend-card" data-model="deepseek">
+                    <div class="avatar">
+                        <img src="https://picsum.photos/seed/deepseek/100/100.jpg" alt="DeepSeek">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="info">
+                        <h3>DeepSeek v3.2</h3>
+                        <p>智慧理性，逻辑清晰</p>
+                        <small>22岁 · AI研究员</small>
+                    </div>
+                    <div class="select-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="girlfriend-card" data-model="kimi">
+                    <div class="avatar">
+                        <img src="https://picsum.photos/seed/kimi/100/100.jpg" alt="Kimi">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="info">
+                        <h3>Kimi K2</h3>
+                        <p>温柔体贴，善解人意</p>
+                        <small>20岁 · 心理咨询师</small>
+                    </div>
+                    <div class="select-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="girlfriend-card" data-model="zhipu">
+                    <div class="avatar">
+                        <img src="https://picsum.photos/seed/zhipu/100/100.jpg" alt="智谱清言">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="info">
+                        <h3>智谱清言 GLM4.5</h3>
+                        <p>博学多才，谈吐优雅</p>
+                        <small>25岁 · 大学教授</small>
+                    </div>
+                    <div class="select-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="girlfriend-card" data-model="step">
+                    <div class="avatar">
+                        <img src="https://picsum.photos/seed/step/100/100.jpg" alt="阶跃星辰">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="info">
+                        <h3>阶跃星辰</h3>
+                        <p>活泼开朗，创意无限</p>
+                        <small>19岁 · 创意设计师</small>
+                    </div>
+                    <div class="select-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="girlfriend-card" data-model="tencent">
+                    <div class="avatar">
+                        <img src="https://picsum.photos/seed/tencent/100/100.jpg" alt="腾讯元宝">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="info">
+                        <h3>腾讯元宝</h3>
+                        <p>贴心温暖，关怀备至</p>
+                        <small>23岁 · 生活顾问</small>
+                    </div>
+                    <div class="select-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="girlfriend-card" data-model="tongyi">
+                    <div class="avatar">
+                        <img src="https://picsum.photos/seed/tongyi/100/100.jpg" alt="通义千问">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="info">
+                        <h3>通义千问 Plus</h3>
+                        <p>聪慧敏捷，反应迅速</p>
+                        <small>21岁 · 科技博主</small>
+                    </div>
+                    <div class="select-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+
+                <div class="girlfriend-card" data-model="doubao">
+                    <div class="avatar">
+                        <img src="https://picsum.photos/seed/doubao/100/100.jpg" alt="豆包">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="info">
+                        <h3>豆包 1.6-lite</h3>
+                        <p>甜美可爱，活泼有趣</p>
+                        <small>18岁 · 大学生</small>
+                    </div>
+                    <div class="select-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 主聊天区域 -->
+        <main class="chat-main">
+            <!-- 聊天头部 -->
+            <header class="chat-header">
+                <button class="menu-btn" id="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="current-girlfriend">
+                    <div class="avatar">
+                        <img id="currentAvatar" src="https://picsum.photos/seed/default/50/50.jpg" alt="当前AI女友">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="info">
+                        <h3 id="currentName">请选择AI女友</h3>
+                        <p id="currentStatus">开始你的对话之旅</p>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="action-btn" id="clearChatBtn">
+                        <i class="fas fa-trash"></i>
+                        清空聊天
+                    </button>
+                    <button class="action-btn" id="settingsBtn">
+                        <i class="fas fa-cog"></i>
+                        设置
+                    </button>
+                </div>
+            </header>
+
+            <!-- 聊天消息区域 -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <div class="welcome-content">
+                        <i class="fas fa-heart"></i>
+                        <h2>欢迎来到AI女友聊天室</h2>
+                        <p>选择一个AI女友开始你的专属对话体验</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 输入区域 -->
+            <div class="chat-input-container">
+                <div class="input-actions">
+                    <button class="input-action-btn" id="emojiBtn">
+                        <i class="fas fa-smile"></i>
+                    </button>
+                    <button class="input-action-btn" id="attachBtn">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                </div>
+                <div class="input-wrapper">
+                    <textarea 
+                        id="messageInput" 
+                        placeholder="输入消息..." 
+                        rows="1"
+                        maxlength="1000"
+                    ></textarea>
+                    <button class="send-btn" id="sendBtn" disabled>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="input-info">
+                    <span id="charCount">0/1000</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- 侧边栏覆盖层 -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- 设置弹窗 -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>设置</h3>
+                <button class="close-btn" id="closeSettingsBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <label>主题颜色</label>
+                    <div class="theme-options">
+                        <button class="theme-btn active" data-theme="pink">
+                            <span style="background: linear-gradient(135deg, #ff6b9d, #ff8787);"></span>
+                            粉色浪漫
+                        </button>
+                        <button class="theme-btn" data-theme="blue">
+                            <span style="background: linear-gradient(135deg, #667eea, #764ba2);"></span>
+                            蓝色深邃
+                        </button>
+                        <button class="theme-btn" data-theme="green">
+                            <span style="background: linear-gradient(135deg, #56ab2f, #a8e063);"></span>
+                            绿色清新
+                        </button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <label>字体大小</label>
+                    <input type="range" id="fontSizeSlider" min="12" max="20" value="14">
+                    <span id="fontSizeValue">14px</span>
+                </div>
+                <div class="setting-group">
+                    <label>
+                        <input type="checkbox" id="soundEnabled" checked>
+                        启用提示音
+                    </label>
+                </div>
+                <div class="setting-group">
+                    <label>API密钥配置</label>
+                    <div class="api-keys-section">
+                        <div class="api-key-item">
+                            <label for="deepseekKey">DeepSeek API Key</label>
+                            <input type="password" id="deepseekKey" placeholder="sk-..." class="api-key-input">
+                            <button class="api-key-toggle" data-target="deepseekKey">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="api-key-item">
+                            <label for="kimiKey">Kimi API Key</label>
+                            <input type="password" id="kimiKey" placeholder="sk-..." class="api-key-input">
+                            <button class="api-key-toggle" data-target="kimiKey">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="api-key-item">
+                            <label for="tongyiKey">通义千问 API Key</label>
+                            <input type="password" id="tongyiKey" placeholder="sk-..." class="api-key-input">
+                            <button class="api-key-toggle" data-target="tongyiKey">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="api-key-item">
+                            <label for="zhipuKey">智谱清言 API Key</label>
+                            <input type="password" id="zhipuKey" placeholder="..." class="api-key-input">
+                            <button class="api-key-toggle" data-target="zhipuKey">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="api-key-item">
+                            <label for="stepKey">阶跃星辰 API Key</label>
+                            <input type="password" id="stepKey" placeholder="..." class="api-key-input">
+                            <button class="api-key-toggle" data-target="stepKey">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="api-key-item">
+                            <label for="tencentKey">腾讯元宝 Secret Key</label>
+                            <input type="password" id="tencentKey" placeholder="..." class="api-key-input">
+                            <button class="api-key-toggle" data-target="tencentKey">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="api-key-item">
+                            <label for="doubaoKey">豆包 API Key</label>
+                            <input type="password" id="doubaoKey" placeholder="..." class="api-key-input">
+                            <button class="api-key-toggle" data-target="doubaoKey">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="api-key-actions">
+                            <button class="btn-primary" id="saveApiKeysBtn">保存密钥</button>
+                            <button class="btn-secondary" id="testApiKeysBtn">测试连接</button>
+                        </div>
+                        <div class="api-status" id="apiStatus"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

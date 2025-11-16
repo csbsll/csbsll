@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通义千问API测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="password"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #10a37f;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #0d8f6d;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>通义千问API测试工具</h1>
+        
+        <div class="input-group">
+            <label for="apiKey">API密钥：</label>
+            <input type="password" id="apiKey" placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxx">
+        </div>
+        
+        <div class="input-group">
+            <label for="testMessage">测试消息：</label>
+            <textarea id="testMessage" rows="3" placeholder="输入测试消息...">你好，请简单介绍一下自己。</textarea>
+        </div>
+        
+        <button onclick="testTongyiApi()">测试通义千问API</button>
+        <button onclick="testOldFormat()">测试旧格式API</button>
+        <button onclick="clearResults()">清除结果</button>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function showResult(message, type = 'info') {
+            const resultsDiv = document.getElementById('results');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `result ${type}`;
+            resultDiv.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            resultsDiv.appendChild(resultDiv);
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+
+        async function testTongyiApi() {
+            const apiKey = document.getElementById('apiKey').value.trim();
+            const message = document.getElementById('testMessage').value.trim();
+            
+            if (!apiKey) {
+                showResult('请输入API密钥', 'error');
+                return;
+            }
+            
+            if (!message) {
+                showResult('请输入测试消息', 'error');
+                return;
+            }
+            
+            showResult('开始测试新格式API调用...', 'info');
+            
+            try {
+                const response = await fetch('https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`,
+                        'X-DashScope-SSE': 'disable'
+                    },
+                    body: JSON.stringify({
+                        model: 'qwen-flash',
+                        messages: [
+                            { role: 'system', content: '你是一个友好的AI助手' },
+                            { role: 'user', content: message }
+                        ],
+                        max_tokens: 500,
+                        temperature: 0.7
+                    })
+                });
+                
+                showResult(`HTTP状态码: ${response.status}`, 'info');
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    showResult(`API调用失败: ${response.status} - ${errorText}`, 'error');
+                    return;
+                }
+                
+                const data = await response.json();
+                showResult('API调用成功！', 'success');
+                showResult(`响应数据: ${JSON.stringify(data, null, 2)}`, 'success');
+                
+                if (data.choices && data.choices[0] && data.choices[0].message) {
+                    showResult(`AI回复: ${data.choices[0].message.content}`, 'success');
+                } else {
+                    showResult('响应格式异常', 'error');
+                }
+                
+            } catch (error) {
+                showResult(`请求异常: ${error.message}`, 'error');
+            }
+        }
+
+        async function testOldFormat() {
+            const apiKey = document.getElementById('apiKey').value.trim();
+            const message = document.getElementById('testMessage').value.trim();
+            
+            if (!apiKey) {
+                showResult('请输入API密钥', 'error');
+                return;
+            }
+            
+            if (!message) {
+                showResult('请输入测试消息', 'error');
+                return;
+            }
+            
+            showResult('开始测试旧格式API调用...', 'info');
+            
+            try {
+                const response = await fetch('https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`,
+                        'X-DashScope-SSE': 'disable'
+                    },
+                    body: JSON.stringify({
+                        model: 'qwen-flash',
+                        input: {
+                            messages: [
+                                { role: 'system', content: '你是一个友好的AI助手' },
+                                { role: 'user', content: message }
+                            ]
+                        },
+                        parameters: {
+                            max_tokens: 500,
+                            temperature: 0.7
+                        }
+                    })
+                });
+                
+                showResult(`HTTP状态码: ${response.status}`, 'info');
+                
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    showResult(`API调用失败: ${response.status} - ${errorText}`, 'error');
+                    return;
+                }
+                
+                const data = await response.json();
+                showResult('API调用成功！', 'success');
+                showResult(`响应数据: ${JSON.stringify(data, null, 2)}`, 'success');
+                
+                if (data.output && data.output.choices && data.output.choices[0] && data.output.choices[0].message) {
+                    showResult(`AI回复: ${data.output.choices[0].message.content}`, 'success');
+                } else {
+                    showResult('响应格式异常', 'error');
+                }
+                
+            } catch (error) {
+                showResult(`请求异常: ${error.message}`, 'error');
+            }
+        }
+
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+
+        // 从localStorage加载已保存的API密钥
+        window.onload = function() {
+            const savedKeys = localStorage.getItem('aiGirlfriendApiKeys');
+            if (savedKeys) {
+                try {
+                    const apiKeys = JSON.parse(savedKeys);
+                    if (apiKeys.tongyi) {
+                        document.getElementById('apiKey').value = apiKeys.tongyi;
+                        showResult('已从localStorage加载通义千问API密钥', 'info');
+                    }
+                } catch (e) {
+                    showResult('加载API密钥失败', 'error');
+                }
+            }
+        };
+    </script>
+</body>
+</html>
